@@ -1,0 +1,23 @@
+{
+  "URL_REST_LA": "http://la2K12.eastus.cloudapp.azure.com:8079/Pview/PViewISAPI.dll/la/rest/TView/",
+  "URL_REST": "http://10.10.0.4:8089/Pview/PViewISAPI.dll/la/rest/TView/",
+  "NUCLI": 99,
+  "MonBase": "VEF",
+  "BG_COLOR_OSCURO": "#17a2b8",
+  "BG_COLOR_CLARO": "#d1ecf1",
+  "COLOR_TEXT": "#0c5460",
+  "TITULO": "NgAplica",
+  "PROXY": {
+    "USARPROXY": "N",
+    "SERVER": "",
+    "PUERTO": 85
+  },
+  "Traductor": true,
+  "TRANSLATE": {
+    "URLTRANSLATE": "",
+    "IDTRANSLATE": ""
+  },
+  "APIKEYLA": "EwAAAEpu2ud8WEgyfCgRB1b1TPDbtMeqeR5j7SObgprDv9kC",
+  "RUTALOCAL": ""
+
+}

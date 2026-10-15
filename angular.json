@@ -28,17 +28,36 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/assets/fontawesome-free-5.14.0-web/css/all.min.css",
+              "src/assets/fontawesome-free-5.15.4-web/css/all.min.css",
+              "node_modules/@laranda/lib-visual/lib/styles/scss/_tema.scss",
+              "node_modules/@laranda/lib-visual/lib/styles/scss/estilos_LA.scss",
+              "node_modules/datatables.net-dt/css/dataTables.dataTables.min.css",
+              "node_modules/datatables.net-buttons-dt/css/buttons.dataTables.min.css",
+              "node_modules/datatables.net-select-dt/css/select.dataTables.min.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/popper.js/dist/umd/popper.min.js",
+              "node_modules/datatables.net/js/jquery.dataTables.min.js",
+              "node_modules/jszip/dist/jszip.min.js",
+              "node_modules/datatables.net-buttons/js/dataTables.buttons.min.js",
+              "node_modules/datatables.net-buttons/js/buttons.flash.min.js",
+              "node_modules/datatables.net-buttons/js/buttons.html5.min.js",
+              "node_modules/datatables.net-buttons/js/buttons.print.min.js",
+              "node_modules/datatables.net-select/js/dataTables.select.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "1mb",
+                  "maximumError": "2mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -103,5 +122,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "74b12a1e-54e7-4a06-bebc-ad8363fed1f8"
   }
 }

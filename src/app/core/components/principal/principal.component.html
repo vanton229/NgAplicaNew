@@ -1,0 +1,83 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+  <a class="navbar-brand" target="_blank" href="http://www.lasistemas.com">
+    <img src="../../../../assets/img/logo.png" width="260" height="28" class="d-inline-block align-top" alt="">
+  </a>
+  <span class="navbar-text">
+    {{ authService.CadOut.Nombrecli }}
+  </span>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fa fa-bars"></i>
+  </button>
+  <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#Home"  role="tab"
+        data-toggle="tab"
+        id="nav-Home"
+        aria-controls="tab-Home"
+        aria-selected="false"
+        (click)="modificarpantalla(0)"> <i class="fa fa-home"></i> Inicio</a>
+      </li>
+      <li class="nav-item active" >
+        <a class="nav-link" href="#Casos"  role="tab"
+        data-toggle="tab"
+        id="nav-Casos"
+        aria-controls="tab-Casos"
+        aria-selected="false"
+        (click)="modificarpantalla(1)"><i class="fa fa-list"></i> Casos</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#Mejoras"  role="tab"
+        data-toggle="tab"
+        id="nav-Mejoras"
+        aria-controls="tab-Mejoras"
+        aria-selected="false"
+        (click)="modificarpantalla(2)"><i class="fa fa-desktop"></i> Mejoras</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#Visitas"  role="tab"
+        data-toggle="tab"
+        id="nav-Visitas"
+        aria-controls="tab-Visitas"
+        aria-selected="false"
+        (click)="modificarpantalla(3)"><i class="fa fa-address-card"></i> Visitas Cliente</a>
+      </li>
+      <li class="nav-item dropdown active">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fa fa-user"></i> {{ authService.CadOut.Nombre }}
+        </a>
+        <div class="dropdown-menu navbar-dark bg-dark" aria-labelledby="navbarDropdownMenuLink">
+          <!--<a class="dropdown-item" routerLink="/cambiacl">Modificar Password</a> -->
+          <a class="dropdown-item" (click)="closeApp()">Cerrar Sesión</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="tab-content" id="myTabContent">
+<div *ngIf="tppantalla === 0" id="Home" tab-pane fade
+      id="tab-Home"
+      role="tabpanel"
+      aria-labelledby="nav-Home">
+  <app-home></app-home>
+</div>
+<div *ngIf="tppantalla === 1" id="Casos" tab-pane fade
+      id="tab-Casos"
+      role="tabpanel"
+      aria-labelledby="nav-Casos">
+  <app-casos></app-casos>
+</div>
+<div *ngIf="tppantalla === 2" id="Mejoras" tab-pane fade
+      id="tab-Mejoras"
+      role="tabpanel"
+      aria-labelledby="nav-Mejoras">
+  <app-mejoras></app-mejoras>
+</div>
+<div *ngIf="tppantalla === 3" id="Visitas" tab-pane fade
+      id="tab-Visitas"
+      role="tabpanel"
+      aria-labelledby="nav-Visitas">
+  <app-visitas></app-visitas>
+</div>  </div>  
+<app-footer></app-footer>
