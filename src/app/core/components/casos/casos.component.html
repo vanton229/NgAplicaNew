@@ -1,1 +1,118 @@
-<p>casos works!</p>
+<div class="body-consulta" id="page-wrapper">
+  <div class="container-fluid">
+    <div class="row row-stat">
+      <div class="container">
+        <div class="panel panel-default">
+          <div class="panel-heading noborder">
+            <br />
+            <form action="">
+              <div class="row justify-content-center">
+                <h5>Consultar Casos</h5>
+              </div>
+              <hr />
+              <div class="row">
+                <div class="col-6 form-row">
+                  <div class="col-12">
+                    <label class="">Sistemas: </label>
+                    <select
+                      class="form-control"
+                      name="Sistemas"
+                      [formControl]="fSistema"
+                    >
+                      <option [value]="000">Todos los Sistemas</option>
+                      <option
+                        *ngFor="let sistema of dameSistemas.CadOut"
+                        [value]="sistema.Nusistema"
+                      >
+                        {{ sistema.Nusistema }}-{{ sistema.Nomsistema }}
+                      </option>
+                    </select>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label class="">Desde:</label>
+                    <input
+                      type="date"
+                      class="form-control"
+                      placeholder="Fecha Desde"
+                      name="Fdesde"
+                      [ngModel]="desde"
+                      (ngModelChange)="desde = $event"
+                    />
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label class="">Hasta:</label>
+                    <input
+                      type="date"
+                      class="form-control"
+                      placeholder="Fecha Hasta"
+                      name="Fhasta"
+                      [ngModel]="hasta"
+                      (ngModelChange)="hasta = $event"
+                    />
+                  </div>
+                </div>
+                <div class="col-6 LA-card">
+                  <label>Status: </label>
+                  <br />
+                  <!--<div *ngFor="let stat of dameStatusCasos.CadOut"
+                    class="custom-control custom-checkbox custom-control-inline">
+
+                    <input type="checkbox" id="RadioInline{{stat.Codigo}}" name="customRadioInline1" 
+                      class="custom-control-input" [formControl]="$any(frmStatCasos.get('Check'+stat.Codigo))">
+
+                    <label class="custom-control-label" for="RadioInline{{stat.Codigo}}">
+                      {{ stat.Descripcion }}
+                    </label>
+                  </div>-->
+                  <div class="checkbox-grid">
+                    <div
+                      *ngFor="let stat of dameStatusCasos.CadOut"
+                      class="custom-control custom-checkbox"
+                    >
+                      <input
+                        type="checkbox"
+                        id="RadioInline{{ stat.Codigo }}"
+                        class="custom-control-input"
+                        [formControl]="
+                          $any(frmStatCasos.get('Check' + stat.Codigo))
+                        "
+                      />
+
+                      <label
+                        class="custom-control-label"
+                        for="RadioInline{{ stat.Codigo }}"
+                      >
+                        {{ stat.Descripcion }}
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row justify-content-end">
+                <button
+                  class="btn btn-outline-secondary mr-3 mt-3"
+                  (click)="getBuscar()"
+                >
+                  Buscar Casos
+                </button>
+              </div>
+              <br />
+            </form>
+            <br />
+
+            <div class="col-12">
+              <lvi-spinner *ngIf="!visible"></lvi-spinner>
+              <lvi-tabla-la
+                *ngIf="dameCasos.visible"
+                [columnas]="dtColumnas"
+                [datosX]="dameCasos.CadOut"
+                barraY="50vh"
+                class="LA-tabla-font-11"
+              ></lvi-tabla-la>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

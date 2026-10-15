@@ -1,1 +1,60 @@
-<p>mejoras works!</p>
+<div class="body-consulta" id="page-wrapper">
+  <div class="container-fluid">
+    <div class="row row-stat">
+      <div class="container">
+        <div class="panel panel-default">
+          <div class="panel-heading noborder">
+            <br>
+            <form action="">
+              <div class="row justify-content-center">
+                <h5>Consultar Mejoras de Sistemas</h5>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-6">
+                  <label class="">Sistemas: </label>
+                  <select class="form-control" name="Sistemas" [formControl]="fSistemas">
+                    <option [value]="000">Todos los Sistemas</option>
+                    <option *ngFor="let sistema of dameSistemas.CadOut" [value]="sistema.Nusistema">
+                      {{ sistema.Nusistema }}-{{ sistema.Nomsistema }}
+                    </option>
+                  </select>
+                </div>
+
+                <div class="col-3">
+                  <label class="">Desde:</label>
+                  <input type="date" class="form-control" placeholder="Fecha Desde" name="Fdesde"
+                    [ngModel]="desde" (ngModelChange)="desde = $event">
+
+                </div>
+                <div class="col-3">
+                  <label class="">Hasta:</label>
+                  <input type="date" class="form-control" placeholder="Fecha Hasta" name="Fhasta"
+                    [ngModel]="hasta" (ngModelChange)="hasta = $event">
+                </div>
+              </div>
+              <br>
+              <div class="row justify-content-end">
+                <button class="btn btn-outline-secondary mr-3 mt-3" (click)="getBuscar()">Buscar
+                  Mejoras</button>
+              </div>
+              <br>
+            </form>
+            <br>
+            <div class="row ">
+              <div class="col-12">
+                <lvi-tabla-la 
+                  *ngIf="dameAsunto.visible"
+                  [columnas]="dtColumnas" 
+                  [datosX]="dameAsunto.CadOut"
+                  barraY="50vh"  class="LA-tabla-font-11"
+                 
+                ></lvi-tabla-la>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

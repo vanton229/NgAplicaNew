@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
-import { AutenticaCli } from '@laranda/lib-ultra-net';
+import { AuthService } from '../shared/services/auth.service';
+
 
 @Injectable({
   providedIn: 'root'
@@ -8,13 +9,13 @@ import { AutenticaCli } from '@laranda/lib-ultra-net';
 export class CambiaCLGuard implements CanActivate {
 
   constructor(
-    private autenticaCli: AutenticaCli,
+    private authService: AuthService,
     private router: Router
   ) {}
 
   canActivate(): boolean {
 
-    if (this.autenticaCli.estaAutenticado()) {
+    if (this.authService.estaAutenticado()) {
       return true;
     } else {
       this.router.navigateByUrl('/login');

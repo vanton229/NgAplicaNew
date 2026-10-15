@@ -29,7 +29,6 @@
             ],
             "styles": [
               "src/styles.scss",
-              "src/assets/fontawesome-free-5.14.0-web/css/all.min.css",
               "src/assets/fontawesome-free-5.15.4-web/css/all.min.css",
               "node_modules/@laranda/lib-visual/lib/styles/scss/_tema.scss",
               "node_modules/@laranda/lib-visual/lib/styles/scss/estilos_LA.scss",
